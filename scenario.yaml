@@ -1,0 +1,141 @@
+name: Phishing for Profit
+description: Kurtis Black, a tech-savvy 30-year-old, attempts to steal cryptocurrency through targeted phishing emails sent to online gamers, including Jamie Ortega. Unfortunately for Kurtis, he uses his personal email account in the process, leaving a traceable link back to him. While Samantha Reed innocently uses the same computer, her unrelated activities create background noise that further mystifies the investigation while ultimately leading to Kurtis's capture due to his careless employment of personal correspondence.
+author: John Doe
+scenario_options:
+  export_dir: /data/export/
+  guest_name: SharedComputer
+  guest_platform: windows10
+  scenario_start: "2024-04-16 08:15:42"
+  debug_level: DEBUG
+scenario:
+  - fortrace.usermanagement:
+      action: create
+      name: SReed34
+      password: SecurePass123!
+  - fortrace.usermanagement:
+      action: switch_to
+      name: SReed34
+      password: SecurePass123!
+  - fortrace.mail:
+      action: add_imap_account
+      imap_server: mx.freenet.de
+      smtp_server: mx.freenet.de
+      email_address: samantha.reed@freenet.de
+      username: samantha.reed@freenet.de
+      full_name: Samantha Reed
+      socket_type: 2
+      socket_type_smtp: 2
+      auth_method_smtp: 3
+  - fortrace.mail:
+      action: open
+      password: SamanthaMailPass!
+  - fortrace.mail:
+      action: close
+  - fortrace.browser:
+      action: open
+  - fortrace.browser:
+      action: browse_to
+      url: 'https://twentyonetravel.com/reisen/'
+  - fortrace.browser:
+      action: browse_to
+      url: 'https://www.fitness-foren.de/forums/laufsport.90/'
+  - fortrace.browser:
+      action: close
+  - fortrace.filemanagement:
+      action: write_text_to_file
+      filepath: 'C:\Users\SReed34\Documents\pumpkin_pie.txt'
+      filecontent: 'Ingredients:
+
+        - Pumpkin puree
+
+        - Sugar
+
+        - Flour
+
+        - Instructions:
+        
+        1. Mix ingredients together.
+        2. Bake at 350°F for 30 minutes.'
+  - fortrace.filemanagement:
+      action: open_file
+      filepath: 'C:\Users\SReed34\Documents\pumpkin_pie.txt'
+  - fortrace.filemanagement:
+      action: empty_recycle_bin
+  - fortrace.usermanagement:
+      action: create
+      name: KBlack30
+      password: SuspectPass456
+      artifact_type: NEEDLE
+  - fortrace.usermanagement:
+      action: switch_to
+      name: KBlack30
+      password: SuspectPass456
+      artifact_type: NEEDLE
+  - fortrace.mail:
+      action: add_imap_account
+      imap_server: imap.web.de
+      smtp_server: smtp.web.de
+      email_address: kurtis.black30@web.de
+      username: kurtis.black30@web.de
+      full_name: Kurtis Black
+      socket_type: 3
+      socket_type_smtp: 3
+      auth_method_smtp: 3
+  - fortrace.browser:
+      action: open
+  - fortrace.browser:
+      action: browse_to
+      url: 'https://cyberphinix.de/de/blog/17-besten-phishing-tools/#evilginx2'
+      artifact_type: NEEDLE
+  - fortrace.browser:
+      action: browse_to
+      url: 'https://www.reddit.com/r/cryptogames/'
+      artifact_type: NEEDLE
+  - fortrace.browser:
+      action: close
+  - fortrace.filemanagement:
+      action: write_text_to_file
+      filepath: 'C:\Users\KBlack30\Documents\phishing_email.txt'
+      filecontent: 'Subject: Exclusive Offer
+        Dear Gamer,
+
+        We are excited to offer you an exclusive opportunity to invest in our new cryptocurrency platform...'
+  - fortrace.mail:
+      action: open
+      password: KurtisMailPass!
+      artifact_type: NEEDLE
+  - fortrace.mail:
+      action: send_mail
+      receiver: jamie.ortega89@yahoo.com
+      subject: "Exclusive Offer"
+      message: "Dear Gamer
+        
+        We are excited to offer you an exclusive opportunity to invest in our new cryptocurrency platform..."
+      artifact_type: NEEDLE
+  - fortrace.mail:
+      action: close
+  - fortrace.filemanagement:
+      action: secure_delete
+      filepath: 'C:\Users\KBlack30\Documents\phishing_email.txt'
+  - fortrace.filemanagement:
+      action: empty_recycle_bin
+  - fortrace.antiforensics:
+      target: event_log
+      status: cleared
+  - fortrace.powershell:
+      action: execute_command
+      command: "wevtutil cl System"
+      artifact_type: NEEDLE
+  - fortrace.usermanagement:
+      action: switch_to
+      name: SReed34
+      password: SecurePass123!
+  - fortrace.browser:
+      action: open
+  - fortrace.browser:
+      action: browse_to
+      url: 'https://gardenbetty.com/how-to-harden-off-your-seedlings/'
+  - fortrace.browser:
+      action: close
+  - fortrace.powermanagement:
+      action: shutdown
