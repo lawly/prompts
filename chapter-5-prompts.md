@@ -163,6 +163,10 @@ Ensure that each relationship is represented by a single line in the diagram, wi
 Present your final mermaid diagram within <mermaid_diagram> tags.
 ```
 
+#### Relations: Example Output
+
+![relations_example](./images/mermaid_relationship_diagram.png)
+
 ### Generate Activities
 
 ```
