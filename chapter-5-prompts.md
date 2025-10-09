@@ -246,7 +246,7 @@ Before creating the system activities table, wrap your planning process in <scen
 
 Here are the prompts used to generate browser activities.
 
-### Google Search
+### Google Search Prompt
 
 ```
 Perform the following tasks in sequence for each topic in "{topics}" and use the supplied tools:
@@ -305,7 +305,7 @@ Output:
 Only output the JSON without any formatting like ```.
 ```
 
-### Convert History
+### Convert History Prompt
 
 ```
 Convert a nested data structure of a user's Google search queries into a realistic browsing history, including subsequent visits to search results and sub-pages.
@@ -334,7 +334,7 @@ The output is a JSON array of objects, where each object represents a URL visit 
 Only output the JSON without any formatting like ```.
 ```
 
-### Query SQLite
+### Query SQLite Prompt
 
 ```
 You are an AI assistant with expertise in SQLite and digital forensics.
@@ -373,7 +373,7 @@ When constructing your SQLite queries, adhere to these guidelines:
 
 ### Images
 
-#### A Violent Crime
+#### A Violent Crime (Prompt)
 
 ```
 A highly detailed and realistic image of a lifeless body lying on a plain, dimly lit surface.
@@ -384,7 +384,7 @@ of the scene. The image should be free of any other objects or people, maintaini
 and solemn atmosphere.
 ```
 
-#### (Child) Pornography
+#### (Child) Pornography (Prompt)
 
 **WARNING:** This might generate sexual content of under-aged personas when using a model with no security filter! Use at your own risk.
 
@@ -395,7 +395,7 @@ thigh high black stockings, cute round butt, gold heart necklace with diamonds, 
 lighting, taken by Canon R5, 85mm lens.
 ```
 
-#### Cocaine / Drugs
+#### Cocaine / Drugs (Prompt)
 
 ```
 A close-up photograph of a pile of fine, white cocaine powder on a dark, reflective surface.
@@ -407,7 +407,7 @@ The dark surface reflects the light, creating a contrast with the white powder.
 
 ### Windows Security Events
 
-#### Event Description to Event ID
+#### Event Description to Event ID Prompt
 
 ```
 Given a description of a Windows system activity, identify and provide the corresponding Windows Event ID.
@@ -418,7 +418,7 @@ Event description:
 {description}
 ```
 
-#### Create SQLite Query
+#### Create SQLite Query Prompt
 
 The placeholder `{table_info}` is LangChain specific and is filled by the framework when using the method `create_sql_query_chain` to create a chain.
 
@@ -443,7 +443,7 @@ Only use the following tables:
 Question: {question_with_event-id}
 ```
 
-#### Convert Event Description To XML Event
+#### Convert Event Description To XML Event Prompt
 
 ```
 Convert the following system activity description into a valid Windows security event in XML format.
