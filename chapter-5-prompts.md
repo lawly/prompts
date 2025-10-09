@@ -4,7 +4,7 @@
 
 Here are the prompts used to generate a forensic scenario description.
 
-### Generate Personas
+### Personas Prompt
 
 ```
 You are an AI assistant tasked with generating persona profiles for a fictional digital forensic investigation scenario. These profiles will be used in training exercises or simulations for cybersecurity professionals. Your goal is to create realistic and diverse profiles that can be analyzed during the training.
@@ -47,7 +47,7 @@ Begin by planning and generating the suspect profile, then the external profile,
 Present your final personas within <personas> tags.
 ```
 
-### Generate Plot
+### Plot Prompt
 
 ```
 You are an expert in digital forensics and scenario creation. Your task is to generate a realistic digital forensic scenario for educational purposes. This scenario will be recreated on a virtual machine for students to analyze.
@@ -108,7 +108,7 @@ Now, create your digital forensic scenario based on the given personas and instr
 Present your final plot in <plot> tags.
 ```
 
-### Generate Relations
+### Relations Prompt
 
 ```
 You are an AI assistant specializing in digital forensics. Your task is to create a network of relationships between personas in a fictive digital forensic scenario. Your goal is to establish connections that are coherent with the given plot and the personas' interests.
@@ -167,7 +167,7 @@ Present your final mermaid diagram within <mermaid_diagram> tags.
 
 ![relations_example](./images/mermaid_relationship_diagram.png)
 
-### Generate Activities
+### Activities Prompt
 
 ```
 You are a digital forensics expert specializing in Windows systems.
@@ -483,7 +483,7 @@ Now convert this activity description into the corresponding Windows security ev
 
 This prompt will generate weak password based on rules derived from a [pipal](https://github.com/digininja/pipal) report of `rockyou.txt`.
 
-#### Generate Weak Password Rules
+#### Weak Password Rules Prompt
 
 ```
 You are a cybersecurity analyst specializing in password pattern analysis. Your task is to derive actionable password-generation rules for weak passwords from statistical data.
@@ -515,7 +515,7 @@ Create rules that, when followed, would reproduce passwords matching the report.
 Enclose the rules in <rules> tags.
 ```
 
-#### Generate Passwords based on those rules
+#### Passwords based on those rules Prompt
 
 ```
 You are a weak password generator trained to mimic patterns from insecure password datasets.

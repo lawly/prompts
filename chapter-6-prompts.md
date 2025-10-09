@@ -4,7 +4,7 @@
 
 Here are the prompts used to enhance ForTrace's module docstrings and create a JSON schema for each.
 
-### Enhance Docstring
+### Enhance Docstring Prompt
 
 ```
 You are given a Python function and its parameters. Your task is to create a clear, well-structured Sphinx-style docstring.
@@ -34,7 +34,7 @@ Follow these guidelines:
 Output the docstring enclosed in <enhanced_docstring> tags.
 ```
 
-### Create RAG Schema
+### Create RAG Schema Prompt
 
 ```
 You are tasked with generating a JSON schema that describes all possible functions of a framework's module. You will be provided with a module description and some YAML examples. Your goal is to create a comprehensive JSON schema based on this information.
@@ -194,7 +194,7 @@ Present your final JSON schema within <json_schema> tags. Ensure that the schema
 
 Here are the prompts used to generate a synthetic YAML configuration for ForTrace.
 
-### Generate Personas
+### Personas Prompt
 
 ```
 You are an AI assistant tasked with generating persona profiles for a fictional digital forensic investigation scenario. These profiles will be used in training exercises or simulations for cybersecurity professionals. Your goal is to create realistic and diverse profiles that can be analyzed during the training.
@@ -303,7 +303,7 @@ Present your final personas within <personas> tags.
 ]
 ```
 
-### Generate Plot
+### Plot Prompt
 
 ```
 You are an expert in digital forensics and scenario creation. Your task is to generate a realistic digital forensic scenario for educational purposes. This scenario will be recreated on a virtual machine for students to analyze.
@@ -436,7 +436,7 @@ Tags: phishing, cryptocurrency theft, email trail, digital forensics, suspect mi
 ```
 
 
-### Generate Relations
+### Relations Prompt
 
 [See Chapter 5 - Generate Relations](chapter-5-prompts.md#generate-relations)
 
@@ -450,7 +450,7 @@ graph TD
     Samantha_Reed---|Shared computer but unaware of Kurtis's activities|Kurtis_Black
 ```
 
-### Generate Activities
+### Activities Prompt
 
 ```
 You are a digital forensics expert specializing in Windows systems.
@@ -559,7 +559,7 @@ Output a markdown formatted table of system activities within <activities> tags.
 ![activities1](./images/activity-kurtis1.png)
 ![activities2](./images/activity-kurtis2.png)
 
-### Generate YAML
+### YAML Prompt
 
 The placeholder `{context}` is a LangChain specific variable filled by the framework when using a vector storage.
 
