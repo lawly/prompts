@@ -1,6 +1,6 @@
 # Prompts
 
-Here are the prompts of chapter 5 that required a re-work to work with *Gemini 2.5 Flash*.
+Here are the prompts of chapter 5 that required a adaption to work with *Gemini 2.5 Flash*.
 
 ## Generate Personas
 
