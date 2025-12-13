@@ -12,7 +12,7 @@ Analysis of web browser artefacts further supports the internal coherence of the
 
 ![Browser history 2](./images/kblack30-places-sqlite-1.png)
 
-File system analysis confirmed the presence of the text file pumpkin.txt within the home directory of the user *sreed34*. The file contains the expected pumpkin recipe, matching the scenario description and further validating the successful synthesis of benign user content. In contrast, the file *phishing\_email.txt*, which was originally generated for the suspect *kblack30*, could not be recovered from the disk image. This absence is consistent with the execution of ForTrace’s anti-forensic module (sdelete), which was configured to securely delete the file during scenario execution.
+File system analysis confirmed the presence of the text file *pumpkin\_pie.txt* within the *Documents* directory of the user *sreed34*. The file contains the expected pumpkin recipe, matching the scenario description and further validating the successful synthesis of benign user content. In contrast, the file *phishing\_email.txt*, which was originally generated for the suspect *kblack30*, could not be recovered from the disk image. This absence is consistent with the execution of ForTrace’s anti-forensic module (sdelete), which was configured to securely delete the file during scenario execution.
 
 ![Pumpkin](./images/pumpkin-1.png)
 

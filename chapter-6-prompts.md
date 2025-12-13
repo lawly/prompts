@@ -261,11 +261,11 @@ Present your final personas within <personas> tags.
     "age": 30,
     "user_account_name": "KBlack30",
     "mail_settings": {
-      "email_address": "kurtis.black30@web.de",
-      "imap_server": "imap.web.de",
-      "smtp_server": "smtp.web.de",
-      "socket_type": 3,
-      "socket_type_smtp": 3,
+      "email_address": "kurtis.black30@freenet.de",
+      "imap_server": "mx.freenet.de",
+      "smtp_server": "mx.freenet.de",
+      "socket_type": 2,
+      "socket_type_smtp": 2,
       "auth_method_smtp": 3
     },
     "interests": "hacking, gaming, photography, cryptocurrencies, cybersecurity",
@@ -275,9 +275,9 @@ Present your final personas within <personas> tags.
     "full_name": "Jamie Ortega",
     "age": 28,
     "mail_settings": {
-      "email_address": "jamie.ortega89@freenet.de",
-      "imap_server": "mx.freenet.de",
-      "smtp_server": "mx.freenet.de",
+      "email_address": "jamie.ortega89@yahoo.com",
+      "imap_server": "export.imap.mail.yahoo.com",
+      "smtp_server": "smtp.mail.yahoo.com",
       "socket_type": 2,
       "socket_type_smtp": 2,
       "auth_method_smtp": 3
