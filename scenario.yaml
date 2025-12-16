@@ -1,13 +1,21 @@
 name: Phishing for Profit
 description: Kurtis Black, a tech-savvy 30-year-old, attempts to steal cryptocurrency through targeted phishing emails sent to online gamers, including Jamie Ortega. Unfortunately for Kurtis, he uses his personal email account in the process, leaving a traceable link back to him. While Samantha Reed innocently uses the same computer, her unrelated activities create background noise that further mystifies the investigation while ultimately leading to Kurtis's capture due to his careless employment of personal correspondence.
-author: John Doe
+author: Michael Plankl
 scenario_options:
   export_dir: /data/export/
   guest_name: SharedComputer
   guest_platform: windows10
-  scenario_start: "2024-04-16 08:15:42"
+  scenario_start: "2025-12-11 08:15:42"
   debug_level: DEBUG
 scenario:
+  - fortrace.powershell:
+      action: execute_command
+      command: "cmd.exe /c date 12-11-25"
+      artifact_type: NEEDLE
+  - fortrace.powershell:
+      action: execute_command
+      command: "cmd.exe /c time 08:15:42"
+      artifact_type: NEEDLE
   - fortrace.usermanagement:
       action: create
       name: SReed34
@@ -16,6 +24,10 @@ scenario:
       action: switch_to
       name: SReed34
       password: SecurePass123!
+  - fortrace.powermanagement:
+      action: reboot
+      boot_time: "2025-12-11 09:42:00"
+      artifact_type: NEEDLE
   - fortrace.mail:
       action: add_imap_account
       imap_server: mx.freenet.de
@@ -28,7 +40,7 @@ scenario:
       auth_method_smtp: 3
   - fortrace.mail:
       action: open
-      password: SamanthaMailPass!
+      password: <REDACTED BY AUTHORS>
   - fortrace.mail:
       action: close
   - fortrace.browser:
@@ -71,15 +83,19 @@ scenario:
       name: KBlack30
       password: SuspectPass456
       artifact_type: NEEDLE
+  - fortrace.powermanagement:
+      action: reboot
+      boot_time: "2025-12-11 09:51:37"
+      artifact_type: NEEDLE
   - fortrace.mail:
       action: add_imap_account
-      imap_server: imap.web.de
-      smtp_server: smtp.web.de
-      email_address: kurtis.black30@web.de
-      username: kurtis.black30@web.de
+      imap_server: mx.freenet.de
+      smtp_server: mx.freenet.de
+      email_address: kurtis.black30@freenet.de
+      username: kurtis.black30@freenet.de
       full_name: Kurtis Black
-      socket_type: 3
-      socket_type_smtp: 3
+      socket_type: 2
+      socket_type_smtp: 2
       auth_method_smtp: 3
   - fortrace.browser:
       action: open
@@ -102,7 +118,7 @@ scenario:
         We are excited to offer you an exclusive opportunity to invest in our new cryptocurrency platform...'
   - fortrace.mail:
       action: open
-      password: KurtisMailPass!
+      password: <REDACTED BY AUTHORS>
       artifact_type: NEEDLE
   - fortrace.mail:
       action: send_mail
@@ -130,6 +146,10 @@ scenario:
       action: switch_to
       name: SReed34
       password: SecurePass123!
+  - fortrace.powermanagement:
+      action: reboot
+      boot_time: "2025-12-11 10:03:11"
+      artifact_type: NEEDLE
   - fortrace.browser:
       action: open
   - fortrace.browser:
@@ -137,5 +157,3 @@ scenario:
       url: 'https://gardenbetty.com/how-to-harden-off-your-seedlings/'
   - fortrace.browser:
       action: close
-  - fortrace.powermanagement:
-      action: shutdown
